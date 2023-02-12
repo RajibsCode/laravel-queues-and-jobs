@@ -1,0 +1,16 @@
+
+* change the value in .env
+QUEUE_CONNECTION=database
+* Cmd: php artisan queue:table - create job table migration
+* Cmd: php artisan migrate
+
+1. create job class
+Cmd: php artisan make:job EmailJob
+
+* create form queue.blade.php
+2. make route for the blade
+
+
+
+
+
