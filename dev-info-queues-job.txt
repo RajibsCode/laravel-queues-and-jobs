@@ -8,7 +8,34 @@ QUEUE_CONNECTION=database
 Cmd: php artisan make:job EmailJob
 
 * create form queue.blade.php
-2. make route for the blade
+2. make get route for the queue blade
+
+3. make a action post route for the form and call in action
+
+4. code in method
+* use only() for get only mail adress
+* use explode() for email without commaa
+
+* update mail info in .env
+5. set mail send() code in method
+* cmd: php artisan make:mail sendMail
+* use App\Mail\sendMail;
+* use Illuminate\Support\facades\Mail;
+
+6. assign the variables as public and in _construct() - in mail php
+* set mail subject in envelope() - in mail php
+* set mail html template markdown: in content() - in mail php
+* use with in - content()
+
+7. then set mail content variable in - mail-template blade
+* Cmd: php artisan optimize
+
+8. show flash message after sent
+* return redirect('/mail')->with('status', 'Email Sent Successfully'); - in controller
+
+*   @if (session('status'))
+     {{ session('status') }}
+    @endif
 
 
 

@@ -13,11 +13,14 @@
                 <div class="card-body">
                     <h4 class="card-title text-center">Queues and Jobs</h4>
                     <hr>
-                    @include('flash_data')
+                    {{-- @include('flash_data') --}}
+                    @if (session('status'))
+                    {{ session('status') }}
+                    @endif
                     <hr>
                     <form action="{{ route('queue') }}" method="POST" name="emailSendingForm"
                           enctype="multipart/from-data">
-                        <hr>
+                    
                         @csrf
                         <div class="form-group">
                             <label for="country">Enter Email Ids:</label>

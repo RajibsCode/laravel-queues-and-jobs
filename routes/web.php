@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//2. make get route for the queue blade
+Route::get('/queue', function () {
+    return view('queue');
+});
+
+//3. make a action post route for the form
+Route::post('queue',[\App\Http\Controllers\mailController::class, 'queue'])->name('queue');
